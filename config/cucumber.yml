@@ -1,0 +1,19 @@
+<%
+
+date = Time.now.strftime('%Y%m%d-%H%M%S')
+default_report = "./reports/#{date}/report.html"
+
+ss_path = "./reports/#{date}/"
+
+`mkdir ./reports/#{date}` unless File.exists?("./reports/#{date}")
+
+%>
+
+ss_path: SCREENSHOT_PATH=<%= ss_path %>
+html_report:  -f html -o <%= default_report %>
+
+uai: DEVICE_TARGET=simulator
+
+default: -p ss_path -p html_report -p uai
+
+#default: --format html --out <%= Time.now.strftime("%Y%m%d_%H%M%S") %>.html --format pretty
