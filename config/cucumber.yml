@@ -14,6 +14,6 @@ html_report:  -f html -o <%= default_report %>
 
 uai: DEVICE_TARGET=simulator
 
-default: -p ss_path -p html_report -p uai
+#default: -p ss_path -p html_report -p uai
 
-#default: --format html --out <%= Time.now.strftime("%Y%m%d_%H%M%S") %>.html --format pretty
+default: -f html --out <%= Time.now.strftime("%Y%m%d_%H%M%S") %>.html
