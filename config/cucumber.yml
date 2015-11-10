@@ -5,6 +5,7 @@ default_report = "./reports/#{date}/report.html"
 
 ss_path = "./reports/#{date}/"
 
+`mkdir ./reports` unless File.exists?("./reports")
 `mkdir ./reports/#{date}` unless File.exists?("./reports/#{date}")
 
 %>
